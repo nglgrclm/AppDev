@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Online CV</title>
+    <link href="https://fonts.googleapis.com/css2?family=Futura:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Futura', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header {
+            background: white;
+            padding: 40px;
+            text-align: center;
+            font-size: 32px;
+            font-weight: bold;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background: white;
+            padding: 15px;
+        }
+        nav a {
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 0 20px;
+            font-size: 18px;
+        }
+        .hero {
+            background: #2c3e50;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 36px;
+            font-weight: bold;
+        }
+        .container {
+            max-width: 1000px;
+            margin: -50px auto 40px;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            display: block;
+            margin: 0 auto;
+        }
+        h1, h2 {
+            text-align: center;
+            color: #2c3e50;
+        }
+        .section {
+            max-width: 1000px;
+            margin: 40px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .contact-container {
+            display: flex;
+            max-width: 1000px;
+            margin: 40px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .contact-form {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-family: 'Futura', sans-serif;
+        }
+        .contact-form button {
+            background: #2c3e50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            width: 50%;
+            font-size: 16px;
+            text-align: center;
+            display: block;
+            margin: 0 auto;
+        }
+        .contact-info {
+            flex: 1;
+            padding-left: 40px;
+        }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .social-icons img {
+            width: 32px;
+            height: 32px;
+        }
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    
+    <div class="hero">Welcome to My Portfolio</div>
+    
+    <div id="about" class="container">
+        <img src="angel.jpg" alt="Profile Picture" class="profile-img">
+        <h1>Angel Grace Murillo</h1>
+        <p style="text-align:center;"><strong>"I'm Angel, a third-year IT student passionate about creating innovative solutions for education, cybersecurity, and automation. I specialize in developing efficient systems that solve real-world problems."</strong></p>
+    </div>
+    
+    <div id="skills" class="section">
+        <h2>Skills</h2>
+        <p>- Programming: Python, JavaScript, PHP</p>
+        <p>- Frameworks: React, Laravel</p>
+        <p>- Databases: MySQL, Firebase</p>
+        <p>- Other: UI/UX, API Development</p>
+
+    </div>
+    
+    <div id="portfolio" class="section">
+        <h2>Portfolio</h2>
+        <p>Coming Soon...</p>
+    </div>
+    
+    <div id="contact" class="contact-container">
+        <div class="contact-form">
+            <h2>Contact Me</h2>
+            <input type="text" placeholder="First Name *" required>
+            <input type="text" placeholder="Last Name *" required>
+            <input type="email" placeholder="Email *" required>
+            <textarea placeholder="Type your message here... *" required></textarea>
+            <button type="submit">Submit</button>
+        </div>
+        <div class="contact-info">
+            <p>LAWYER & CONSULTANT</p>
+            <p><strong>Phone:</strong> 123-456-789</p>
+            <p><strong>Email:</strong> info@mysite.com</p>
+            <div class="social-icons">
+                <a href="#"><img src="facebook.png" alt="Facebook"></a>
+                <a href="#"><img src="x.png" alt="Twitter"></a>
+                <a href="#"><img src="instagram.png" alt="Instagram"></a>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        &copy; 2025 nglgrc.lm. All rights reserved.
+    </footer>
+</body>
+</html>
