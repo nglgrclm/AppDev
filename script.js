@@ -1,13 +1,11 @@
-document.addEventListener("DOMContentLoaded", function () {
-    const activityBtn = document.getElementById("activityBtn");
-    const activityContent = document.getElementById("activityContent");
+document.getElementById("toggleActivities").addEventListener("click", function() {
+    var content = document.getElementById("activityContent");
 
-    activityBtn.addEventListener("click", function () {
-        // Toggle visibility
-        if (activityContent.style.display === "none" || activityContent.style.display === "") {
-            activityContent.style.display = "block";
-        } else {
-            activityContent.style.display = "none";
-        }
-    });
+    if (content.style.display === "none" || content.style.display === "") {
+        content.style.display = "block";
+        this.textContent = "HIDE MY ACTIVITIES"; // Change button text
+    } else {
+        content.style.display = "none";
+        this.textContent = "VIEW MY ACTIVITIES"; // Revert button text
+    }
 });

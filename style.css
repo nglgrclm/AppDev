@@ -1,54 +1,110 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: 'Futura', sans-serif;
+    font-family: 'DM Sans', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #eef1f5;
+    background-color: #f8f9fa;
     color: #333;
-}
-
-header {
-    background: white;
-    padding: 40px;
     text-align: center;
-    font-size: 32px;
-    font-weight: bold;
 }
 
+/* Navigation Bar */
 nav {
     display: flex;
     justify-content: center;
-    background: white;
+    align-items: center;
+    background-color: white;
     padding: 15px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
 
 nav a {
-    color: #333;
-    text-decoration: none;
+    color: black;
     font-weight: bold;
+    text-decoration: none;
     margin: 0 20px;
     font-size: 18px;
     transition: color 0.3s;
 }
 
 nav a:hover {
-    color: #007BFF;
+    color: #007bff;
 }
 
+/* Hero Section */
 .hero {
-    background: #2c3e50;
-    height: 200px;
+    height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
+    background-color: #2c3e50; /* Set to match footer */
+    position: relative;
+    padding-top: 80px;
     color: white;
-    font-size: 36px;
-    font-weight: bold;
 }
 
-.container {
-    max-width: 1000px;
-    margin: -50px auto 40px;
+.hero h1, .hero h2, .hero p {
+    color: white;
+}
+
+.hero-container {
+    position: relative;
+}
+
+.image-background {
+    width: 100vw;
+    height: 200px;
+    background-color: #c4b7a3;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+.profile-pic {
+    width: 200px; /* Increased from 150px to 200px */
+    height: 200px; /* Increased from 150px to 200px */
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+/* Button Styles */
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    background: #007BFF;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.btn:hover {
+    background: #0056b3;
+    transform: scale(1.05);
+}
+
+/* About Section */
+.about {
+    max-width: 600px;
+    margin: 100px auto;
     background: white;
     padding: 40px;
     border-radius: 10px;
@@ -56,17 +112,19 @@ nav a:hover {
     text-align: center;
 }
 
-.profile-img {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    object-fit: cover;
-    display: block;
-    margin: 0 auto;
-    border: 5px solid #2c3e50;
+/* Activity Section */
+.activity {
+    max-width: 900px;
+    margin: 100px auto;
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
-.activity-button {
+/* Activity Button */
+.btn-activity {
     margin-top: 20px;
     padding: 12px 24px;
     font-size: 18px;
@@ -76,35 +134,46 @@ nav a:hover {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: background 0.3s, transform 0.2s;
 }
 
-.activity-button:hover {
+.btn-activity:hover {
     background: #0056b3;
+    transform: scale(1.05);
 }
 
-.section {
-    max-width: 1000px;
-    margin: 40px auto;
-    background: white;
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
-
-.hidden {
+/* Activity Content */
+#activity-content {
     display: none;
     margin-top: 20px;
-    padding: 10px;
+    padding: 20px;
     background: #f8f9fa;
-    border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-footer {
+/* Contact Section */
+.contact {
     background: #2c3e50;
+    color: white;
+    padding: 50px 20px;
+}
+
+.contact a {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact a:hover {
+    text-decoration: underline;
+}
+
+/* Footer */
+footer {
+    background: #222;
     color: white;
     text-align: center;
     padding: 20px;
+    margin-top: 30px;
 }
