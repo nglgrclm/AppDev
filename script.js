@@ -1,37 +1,31 @@
 document.addEventListener("DOMContentLoaded", function () {
-    fetch("https://raw.githubusercontent.com/nglgrclm/AppDev/refs/heads/main/courses.json") 
+    const coursesList = document.getElementById("courses-list");
+    const searchBar = document.getElementById("searchBar");
+
+    fetch("https://raw.githubusercontent.com/nglgrclm/AppDev/refs/heads/main/courses.json")
         .then(response => response.json())
         .then(data => {
-            displayCourses(data.courses); 
+            let courses = data.courses;
+            displayCourses(courses);
+
+            searchBar.addEventListener("keyup", function (e) {
+                const searchTerm = e.target.value.toLowerCase();
+                const filteredCourses = courses.filter(course => 
+                    course.name.toLowerCase().includes(searchTerm) || 
+                    course.code.toLowerCase().includes(searchTerm)
+                );
+                displayCourses(filteredCourses);
+            });
         })
-        .catch(error => console.error("Error fetching JSON:", error));
+        .catch(error => console.error("Error loading courses:", error));
 
-    document.getElementById("searchBar").addEventListener("keyup", searchCourses);
+    function displayCourses(courses) {
+        coursesList.innerHTML = ""; 
+        courses.forEach(course => {
+            const courseDiv = document.createElement("div");
+            courseDiv.classList.add("course");
+            courseDiv.innerHTML = `<h4>${course.code} - ${course.name}</h4><p>Units: ${course.units}</p>`;
+            coursesList.appendChild(courseDiv);
+        });
+    }
 });
-
-function displayCourses(courses) {
-    let container = document.getElementById("courses-list");
-    container.innerHTML = ""; 
-
-    courses.forEach(course => {
-        let courseElement = document.createElement("div");
-        courseElement.classList.add("course");
-        courseElement.innerHTML = `<h4>${course.code} - ${course.name}</h4>
-                                   <p>Units: ${course.units}</p>`;
-        container.appendChild(courseElement);
-    });
-}
-
-function searchCourses() {
-    let input = document.getElementById("searchBar").value.toLowerCase();
-    let courses = document.querySelectorAll(".course");
-
-    courses.forEach(course => {
-        let text = course.textContent.toLowerCase();
-        if (text.includes(input)) {
-            course.style.display = "block";
-        } else {
-            course.style.display = "none";
-        }
-    });
-}
