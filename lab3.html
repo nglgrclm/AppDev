@@ -147,10 +147,10 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            fetch("https://raw.githubusercontent.com/yourusername/yourrepo/main/courses.json")
+            fetch("courses.json")
                 .then(response => response.json())
                 .then(data => {
-                    displayCourses(data);
+                    displayCourses(data.courses);
                 })
                 .catch(error => console.error("Error fetching courses:", error));
         });
@@ -162,7 +162,7 @@
             courses.forEach(course => {
                 let courseDiv = document.createElement("div");
                 courseDiv.classList.add("course");
-                courseDiv.innerHTML = `<h4>${course.title}</h4><p>${course.description}</p>`;
+                courseDiv.innerHTML = `<h4>${course.name}</h4><p>Code: ${course.code} | Units: ${course.units}</p>`;
                 courseContainer.appendChild(courseDiv);
             });
         }
@@ -173,7 +173,8 @@
 
             courses.forEach(course => {
                 let title = course.querySelector("h4").textContent.toLowerCase();
-                course.style.display = title.includes(input) ? "block" : "none";
+                let code = course.querySelector("p").textContent.toLowerCase();
+                course.style.display = title.includes(input) || code.includes(input) ? "block" : "none";
             });
         }
     </script>
