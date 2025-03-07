@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Angel Grace Murillo - Profile</title>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="lab4.css">
+    <link rel="stylesheet" href="substaken.css">
     <style>
         body {
             font-family: 'DM Sans', sans-serif;
@@ -62,15 +62,6 @@
         }
 
         /* Courses Section Styling */
-        #searchBar {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 16px;
-        }
-
         .course {
             background: #ecf0f1;
             padding: 15px;
@@ -136,7 +127,6 @@
 
         <section id="courses">
             <h2>My Courses</h2>
-            <input type="text" id="searchBar" placeholder="Search courses..." onkeyup="filterCourses()">
             <div id="courses-list"></div>
         </section>
     </div>
@@ -164,17 +154,6 @@
                 courseDiv.classList.add("course");
                 courseDiv.innerHTML = `<h4>${course.name}</h4><p>Code: ${course.code} | Units: ${course.units}</p>`;
                 courseContainer.appendChild(courseDiv);
-            });
-        }
-
-        function filterCourses() {
-            let input = document.getElementById("searchBar").value.toLowerCase();
-            let courses = document.querySelectorAll(".course");
-
-            courses.forEach(course => {
-                let title = course.querySelector("h4").textContent.toLowerCase();
-                let code = course.querySelector("p").textContent.toLowerCase();
-                course.style.display = title.includes(input) || code.includes(input) ? "block" : "none";
             });
         }
     </script>
