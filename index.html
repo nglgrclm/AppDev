@@ -3,20 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Angel Grace Murillo | Portfolio</title>
+    <title>Angel Grace Murillo | Home</title>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
     
     <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#activity">Activities</a>
-        <a href="#contact">Contact</a>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="act.html">Activities</a>
     </nav>    
 
-    <section id="home" class="hero">
+    <section class="hero">
         <div class="hero-container">
             <div class="image-background"></div>
             <img src="angel.jpg" alt="Angel Grace Murillo" class="profile-pic">
@@ -24,44 +23,11 @@
         <div class="hero-text">
             <h2>ANGEL GRACE MURILLO</h2>
             <p>IT3R1_Track1</p>
-            <a href="cv.pdf" download class="btn">DOWNLOAD CV</a>
         </div>
     </section>
 
-    <section id="about" class="about">
-        <h2>About Me</h2>
-        <p>Hi, I’m Angel, a third-year IT student at USTP passionate about building tech solutions that improve efficiency and accessibility. I’m currently working on AcadEase, a student grading system, and a teacher loading system for junior high schools. I aim to develop innovative and user-friendly software. Outside of coding, I enjoy outdoor activities and cooking.  
-
-            Let’s connect and create something great! 🚀</p>
-    </section>
-
-    <section id="activity" class="activity">
-        <h2>My Activities</h2>
-        <p>Explore my latest projects, academic work, and experiences.</p>
-        <button class="btn-activity" onclick="window.open('PIT1.html', '_blank')">Lab 3. HTML Structure</button>
-        <button class="btn-activity" onclick="window.open('PIT2.html', '_blank')">Lab 4. CSS Styling</button>
-        <button class="btn-activity" onclick="window.open('PIT2.html', '_blank')">Lab 5. Subjects Taken</button>
-        
-
-        <div id="activity-content" class="hidden">
-            <p>Here is some extra content that appears when you click the button!</p>
-        </div>
-    </section>
-
-    <section id="contact" class="contact">
-        <h2>Contact Me</h2>
-        <p>Email: <a href="mailto:murillo.angelgrace@gmail.com">murillo.angelgrace@gmail.com</a></p>
-    </section>
-
-    <script>
-        function toggleActivity() {
-            var content = document.getElementById("activity-content");
-            if (content.style.display === "none" || content.style.display === "") {
-                content.style.display = "block";
-            } else {
-                content.style.display = "none";
-            }
-        }
-    </script>
+    <footer>
+        <p>&copy; 2025 Angel Grace Murillo. All Rights Reserved.</p>
+    </footer>
 </body>
 </html>
