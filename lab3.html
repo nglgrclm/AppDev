@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile Page</title>
+    <title>Angel Grace Murillo - Profile</title>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="lab3.css">
     <style>
@@ -40,12 +40,6 @@
             border-radius: 50%;
             background: url('angel.jpg') no-repeat center center;
             background-size: cover;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            font-weight: bold;
-            color: #555;
         }
 
         h1, h2 {
@@ -67,7 +61,7 @@
             padding-left: 20px;
         }
 
-        /* New Styles for Courses Section */
+        /* Courses Section Styling */
         #searchBar {
             width: 100%;
             padding: 10px;
@@ -89,10 +83,17 @@
             color: #2c3e50;
         }
 
+        footer {
+            margin-top: 20px;
+            background: #34495e;
+            color: white;
+            padding: 10px;
+            font-size: 14px;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
-
     <div class="container">
         <div class="profile-header">
             <div class="profile-image"></div>
@@ -135,16 +136,46 @@
 
         <section id="courses">
             <h2>My Courses</h2>
-            <input type="text" id="searchBar" placeholder="Search courses...">
+            <input type="text" id="searchBar" placeholder="Search courses..." onkeyup="filterCourses()">
             <div id="courses-list"></div>
         </section>
-        </div>
     </div>
 
     <footer>
         <p>&copy; 2025 Angel Grace Murillo. All Rights Reserved.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            fetch("https://raw.githubusercontent.com/yourusername/yourrepo/main/courses.json")
+                .then(response => response.json())
+                .then(data => {
+                    displayCourses(data);
+                })
+                .catch(error => console.error("Error fetching courses:", error));
+        });
+
+        function displayCourses(courses) {
+            let courseContainer = document.getElementById("courses-list");
+            courseContainer.innerHTML = "";
+
+            courses.forEach(course => {
+                let courseDiv = document.createElement("div");
+                courseDiv.classList.add("course");
+                courseDiv.innerHTML = `<h4>${course.title}</h4><p>${course.description}</p>`;
+                courseContainer.appendChild(courseDiv);
+            });
+        }
+
+        function filterCourses() {
+            let input = document.getElementById("searchBar").value.toLowerCase();
+            let courses = document.querySelectorAll(".course");
+
+            courses.forEach(course => {
+                let title = course.querySelector("h4").textContent.toLowerCase();
+                course.style.display = title.includes(input) ? "block" : "none";
+            });
+        }
+    </script>
 </body>
 </html>

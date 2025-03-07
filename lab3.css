@@ -1,3 +1,12 @@
+/* General Page Styling */
+body {
+    font-family: 'DM Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #2c3e50;
+    color: #333;
+    text-align: center;
+}
 
 /* Main Container */
 .container {
@@ -25,6 +34,7 @@
     border-radius: 50%;
     background: url('angel.jpg') no-repeat center center;
     background-size: cover;
+    border: 3px solid #2c3e50;
 }
 
 /* Headings */
@@ -59,8 +69,9 @@ footer {
     margin-top: 20px;
     background: #34495e;
     color: white;
-    padding: 10px;
+    padding: 15px;
     font-size: 14px;
+    text-align: center;
 }
 
 /* Courses Section */
@@ -78,11 +89,18 @@ footer {
     padding: 15px;
     border-radius: 5px;
     margin-bottom: 10px;
+    transition: transform 0.2s, box-shadow 0.2s;
 }
 
 .course h4 {
     margin-bottom: 5px;
     color: #2c3e50;
+}
+
+/* Hover Effects */
+.course:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* Responsive Design */
